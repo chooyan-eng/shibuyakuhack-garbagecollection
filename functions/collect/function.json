@@ -1,0 +1,21 @@
+{
+  "bindings": [
+    {
+      "type": "cosmosDBTrigger",
+      "name": "input",
+      "direction": "in",
+      "leaseCollectionName": "leases",
+      "connectionStringSetting": "garbage_detailsTrigger_ConnectionString",
+      "databaseName": "garbage_info",
+      "collectionName": "garbage_details",
+      "createLeaseCollectionIfNotExists": true
+    },
+    {
+      "type": "queue",
+      "name": "outputQueueItem",
+      "queueName": "tweet-queue",
+      "connection": "AzureWebJobsDashboard",
+      "direction": "out"
+    }
+  ]
+}
